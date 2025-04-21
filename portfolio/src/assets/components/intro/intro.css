@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
+
+.main {
+    display: flex;
+    width: 90%;
+    height: 90vh;
+    justify-content: space-evenly;
+    margin: auto;
+    align-items: center;
+
+}
+
+div {
+    background-color: var(--body-background);
+    color: var(--body-color);
+}
+
+.left-writeup {
+    width: 40%;
+}
+
+.left-writeup h5 {
+    font-size: 32px;
+    color: var(--color-orange);
+    font-weight: 100;
+}
+
+.left-writeup h2 {
+    font-size: 57px;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+}
+
+.left-writeup h2 span {
+    color: var(--color-orange);
+}
+
+.left-writeup h1 {
+    font-size: 102px;
+    color: var(--color-orange);
+    font-weight: 800;
+    /* line-height: 90px; */
+    letter-spacing: 25px;
+}
+
+.left-writeup h3 {
+    font-size: 32px;
+    word-spacing: 2px;
+}
+
+.left-writeup h3 span {
+    font-family: "Jacques Francois Shadow", serif;
+    font-weight: 500;
+    letter-spacing: 15px;
+}
+
+button {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: none;
+    width: 130px;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.cv_btn a {
+    color: var(--color-white);
+}
+
+button:hover {
+    background-color: var(--color-white);
+    color: var(--color-orange);
+    cursor: pointer;
+    transition: 0.7s ease-in-out;
+    border: 1px solid var(--color-orange);
+}
+
+.img {
+    width: 40%;
+    right: 10%;
+}
+
+.img img {
+    width: 100%;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#whatsapp, #linked, #phone, #github {
+    margin: 35px 0;
+    font-size: 2rem;
+    color: grey !important;
+}
+
+#whatsapp:hover {
+    cursor: pointer;
+    color: green !important;
+}
+
+#linked:hover {
+    cursor: pointer;
+    color: yellow !important;
+}
+
+#phone:hover {
+    cursor: pointer;
+    color: gray !important;
+}
+
+#github:hover {
+    cursor: pointer;
+    color: #111 !important;
+}
+
+hr {
+    width: 80%;
+    margin: auto;
+    border: 2px solid black;
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-writeup {
+        width: 100%;
+    }
+
+    .left-writeup h2 {
+        font-size: 37px;
+        word-spacing: 10px;
+        letter-spacing: 5px;
+    }
+
+    .left-writeup h2 span {
+        color: var(--color-orange);
+    }
+
+    .left-writeup h1 {
+        font-size: 82px;
+        color: var(--color-orange);
+        font-weight: 800;
+        line-height: 50px;
+        letter-spacing: 15px;
+    }
+
+    .left-writeup h3 {
+        font-size: 22px;
+        word-spacing: 2px;
+    }
+
+    .left-writeup h3 span {
+        font-family: "Jacques Francois Shadow", serif;
+        font-weight: 500;
+        letter-spacing: 15px;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .img-small {
+        width: 100%;
+        right: 10%;
+        margin-bottom: 20px;
+    }
+
+    .img-small img {
+        width: 100%;
+    }
+
+    .socials {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1026px) {
+    .img-small {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .left-writeup h1 {
+        font-size: 62px;
+        color: var(--color-orange);
+        font-weight: 800;
+        /* line-height: 90px; */
+        letter-spacing: 15px;
+    }
+
+    .left-writeup h3 {
+        font-size: 14px;
+        word-spacing: 2px;
+    }
+}

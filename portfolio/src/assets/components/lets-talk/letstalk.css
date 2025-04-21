@@ -1,0 +1,89 @@
+div {
+    background-color: var(--body-background);
+    color: var(--body-color);
+}
+
+.talk_heading {
+    font-size: 57px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 40px 0;
+}
+
+.talk_heading span {
+    color: var(--color-orange);
+}
+
+.me {
+    height: 70vh !important;
+    background-image: url(../../Images/sad.jpg);
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+#message {
+    height: 300px !important;
+}
+
+.btn {
+    width: 30%;
+    height: 100%;
+    color: white;
+}
+
+.touch h3 {
+    font-size: 150px !important;
+    color: black;
+    text-shadow: 2px 3px 3px gray;
+}
+
+.touch h3 span {
+    color: var(--color-orange);
+}
+
+.right, .left {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.right h5, .left h5 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-orange);
+}
+
+.right h6, .left h6 {
+    letter-spacing: 1px;
+    color: black;
+}
+
+.form_cover {
+    box-shadow: 3px 5px 15px gray;
+    background-color: none !important;
+    color: black !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .btn {
+        width: 70%;
+    }
+
+    .touch h3 {
+        font-size: 100px !important;
+        color: black;
+        text-shadow: 2px 3px 3px gray;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .touch h3 {
+        font-size: 70px !important;
+        color: black;
+        text-shadow: 2px 3px 3px gray;
+        text-align: center;
+    }
+}
