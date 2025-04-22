@@ -6,7 +6,7 @@ const Preloader = () => {
   return (
     <div className="uchiha-preloader">
       <img src={sharingan} alt="Uchiha Sharingan" className="rotating-eye" />
-      <p className="loading-text">Loading Ninja Powers...</p>
+      <p className="loading-text">Loading...</p>
     </div>
   );
 };
