@@ -1,5 +1,6 @@
 import React from "react";
 import { Radar } from "react-chartjs-2";
+import { motion } from "framer-motion";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -120,26 +121,58 @@ const RadarSkills = () => {
         bodyColor: "#000",
         borderColor: "#007bff",
         borderWidth: 1,
+        padding: 10,
+        cornerRadius: 6,
       },
+    },
+    animation: {
+      duration: 1500,
+      easing: "easeOutBounce",
+    },
+    hover: {
+      mode: "nearest",
+      intersect: true,
     },
   };
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      viewport={{ once: true }}
       style={{
         padding: "4rem 2rem",
         background: "#f9f9f9",
         textAlign: "center",
       }}
     >
-      <h2 style={{ fontSize: "2.5rem", marginBottom: "2rem", color: "#333" }}>
+      <motion.h2
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
+        viewport={{ once: true }}
+        style={{
+          fontSize: "2.5rem",
+          marginBottom: "2rem",
+          color: "#333",
+        }}
+      >
         Skill Proficiency Radar
-      </h2>
-      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+      </motion.h2>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 1 }}
+        viewport={{ once: true }}
+        style={{ maxWidth: "800px", margin: "0 auto" }}
+      >
         <Radar data={data} options={options} />
-      </div>
+      </motion.div>
+
       <hr style={{ marginTop: "3rem", borderColor: "#ccc" }} />
-    </section>
+    </motion.section>
   );
 };
 
