@@ -515,7 +515,9 @@ html {
     }
 
     .s-intro__content-media img {
-        object-fit: cover !important;
+        object-fit: fill !important;
+        display: block;
+        width: 100%;
     }
 }
 
