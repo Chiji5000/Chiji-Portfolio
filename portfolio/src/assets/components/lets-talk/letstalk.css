@@ -1,89 +1,271 @@
 div {
-    background-color: var(--body-background);
-    color: var(--body-color);
+  background-color: var(--body-background !important);
+  color: var(--body-color !important);
 }
 
 .talk_heading {
-    font-size: 57px;
-    text-align: center;
-    margin-top: 30px;
-    padding: 40px 0;
+  font-size: 57px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 40px 0;
 }
 
 .talk_heading span {
-    color: var(--color-orange);
+  color: var(--color-orange);
 }
 
-.me {
-    height: 70vh !important;
-    background-image: url(../../Images/sad.jpg);
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+footer {
+  background-color: #111;
+  padding: 100px 0;
+}
+
+.footer_icon ul li {
+  display: inline;
+  font-size: 30px;
+  padding: 0 10px;
+}
+
+.footer_icon ul li a {
+  color: #777 !important;
+}
+
+hr {
+  background: #444;
+  width: 90%;
+  margin-inline: auto;
 }
 
 #message {
-    height: 300px !important;
+  height: 300px !important;
 }
 
 .btn {
-    width: 30%;
-    height: 100%;
-    color: white;
+  width: 30%;
+  height: 100%;
+  color: white;
 }
 
 .touch h3 {
-    font-size: 150px !important;
-    color: black;
-    text-shadow: 2px 3px 3px gray;
+  font-size: 150px !important;
+  color: black;
+  text-shadow: 2px 3px 3px gray;
 }
 
 .touch h3 span {
-    color: var(--color-orange);
+  color: var(--color-orange);
 }
 
 .right, .left {
-    display: flex;
-    justify-content: space-around;
-    text-align: left;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
 }
 
 .right h5, .left h5 {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--color-orange);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-orange);
+}
+
+.follow h5, .contact h5 {
+  color: white !important;
+}
+
+.link-list li a {
+  color: #777 !important;
+}
+
+.ss-copyright span a {
+  color: #fff !important;
+  font-weight: 700;
 }
 
 .right h6, .left h6 {
-    letter-spacing: 1px;
-    color: black;
+  letter-spacing: 1px;
+  color: black;
 }
 
 .form_cover {
-    box-shadow: 3px 5px 15px gray;
-    background-color: none !important;
-    color: black !important;
+  box-shadow: 3px 5px 15px gray;
+  background-color: none !important;
+  color: black !important;
 }
 
 @media screen and (max-width: 1024px) {
-    .btn {
-        width: 70%;
-    }
+  .btn {
+    width: 70%;
+  }
 
-    .touch h3 {
-        font-size: 100px !important;
-        color: black;
-        text-shadow: 2px 3px 3px gray;
-        text-align: center;
-    }
+  .touch h3 {
+    font-size: 100px !important;
+    color: black;
+    text-shadow: 2px 3px 3px gray;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 340px) {
-    .touch h3 {
-        font-size: 70px !important;
-        color: black;
-        text-shadow: 2px 3px 3px gray;
-        text-align: center;
-    }
+  .touch h3 {
+    font-size: 70px !important;
+    color: black;
+    text-shadow: 2px 3px 3px gray;
+    text-align: center;
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  width: 90% !important;
+  margin: auto;
+}
+
+.error-message {
+  color: #ff4d4f;
+  font-size: 1.8rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.success-message {
+  color: #52c41a;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-container {
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-label {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 2px solid #000;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-description {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1 1 calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  flex: 1 1 100%;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #dc3545;
+  color: #ffffff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #c82333;
+}
+
+.s-footer__buttons {
+  padding: 50px 0;
+}
+
+.message_me {
+  background-color: #c82333;
+  padding: 20px 180px;
+  width: 200px !important;
+}
+
+.message_me:hover {
+  background-color: white !important;
+  color: #c82333 !important;
+}
+
+.my_cv {
+  padding: 20px 180px;
+  width: 200px !important;
+  border: 1px solid white;
+}
+
+.my_cv:hover {
+  background-color: #fff;
+  color: #111 !important;
+}
+
+@media screen and (max-width: 740px) {
+  .cv_container {
+    margin-top: 50px !important;
+    width: 100% !important;
+  }
+
+  .my_cv {
+    padding: 20px 100px;
+    width: 200px !important;
+    border: 1px solid white;
+    margin-inline: auto !important;
+  }
+
+  .message_me {
+    padding: 20px 93px;
+    width: 200px !important;
+  }
+
+  .contact-section {
+    width: 100% !important;
+  }
 }
