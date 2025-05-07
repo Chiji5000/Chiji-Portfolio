@@ -55,8 +55,8 @@ function Intro() {
               variants={fadeIn}
               custom={0.5}
             >
-              I'm Iruke Chiji <br />
-              I Am a <br />
+              I'm Iruke Chijindu <br />
+              I Am a<br />
               <span className="typewriter-fade">{text}</span>
               <span style={{ color: "red" }}>
                 <Cursor />

@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import chiji from "../../Images/chiji.jpg";
-import cover from "../../Images/COVER.jpg";
-import flower from "../../Images/flowers.png";
 import blog from "../../Images/real-logo.png";
 import know_us from "../../Images/Get_To_Know_us.png";
 import location from "../../Images/location.png";
@@ -16,6 +13,13 @@ import buygiftcard from "../../Images/buygiftcard.PNG";
 import forgotpassword from "../../Images/forgot_password.PNG";
 import giftcard from "../../Images/giftcards.PNG";
 import penguin from "../../Images/new_penguin.png";
+import art from "../../Images/art.jpg";
+import banner from "../../Images/Banner_example.jpg";
+import coke from "../../Images/coke.png";
+import fomer_portfolio from "../../Images/former_portfolio_design.png";
+import indexpage from "../../Images/indexpage.png";
+import NBC_Peacock from "../../Images/NBC_Peacock.png";
+import profile from "../../Images/profile.png";
 
 import "./project.css";
 
@@ -31,10 +35,7 @@ const Project = () => {
     { src: love, title: "Love" },
     { src: location, title: "Location" },
     { src: minions, title: "Minions" },
-    { src: chiji, title: "Chiji" },
-    { src: cover, title: "Cover" },
-    { src: flower, title: "Flower" },
-    { src: blog, title: "Blog" },
+    { src: blog, title: "Unox Transport Logo" },
     { src: know_us, title: "Get To Know Us" },
     { src: news_paper, title: "News Paper" },
     { src: sign_in, title: "Sign In" },
@@ -44,6 +45,14 @@ const Project = () => {
     { src: forgotpassword, title: "Forgot Password" },
     { src: giftcard, title: "Gift Card" },
     { src: penguin, title: "Penguin" },
+    { src: art, title: "Art" },
+    { src: banner, title: "Banner" },
+    { src: coke, title: "Coke" },
+    { src: fomer_portfolio, title: "Former Portfolio Design" },
+    { src: indexpage, title: "Index Page" },
+    { src: NBC_Peacock, title: "NBC Peacock" },
+    { src: profile, title: "Profile" },
+
   ];
 
   useEffect(() => {

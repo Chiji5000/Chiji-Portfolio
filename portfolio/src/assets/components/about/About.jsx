@@ -88,16 +88,10 @@ const About = () => {
                 <div className="timeline">
                   {[
                     {
-                      year: "2022",
-                      title: "N.Y.S.C",
-                      place: "Ogun State",
-                      desc: "I was deployed to serve my Nation Nigeria for one year. I was deployed to Illoye, Ogun State.",
-                    },
-                    {
-                      year: "2023",
-                      title: "Web Designer",
-                      place: "Was Employed",
-                      desc: "Worked for CCT as a Microsoft Office instructor and started learning Web and Graphics. Later became a self-taught UI/UX designer.",
+                      year: "2025",
+                      title: "Freelancer",
+                      place: "",
+                      desc: "Worked on personal projects and began job hunting.",
                     },
                     {
                       year: "2024",
@@ -106,10 +100,16 @@ const About = () => {
                       desc: "Taught Web, Office, and Graphics. Learned Cinematography/Videography. Self-taught React and Node Developer.",
                     },
                     {
-                      year: "2025",
-                      title: "Freelancer",
-                      place: "",
-                      desc: "Worked on personal projects and began job hunting.",
+                      year: "2023",
+                      title: "Web Designer",
+                      place: "Was Employed",
+                      desc: "Worked for CCT as a Microsoft Office instructor and started learning Web and Graphics. Later became a self-taught UI/UX designer.",
+                    },
+                    {
+                      year: "2022",
+                      title: "N.Y.S.C",
+                      place: "Ogun State",
+                      desc: "I was deployed to serve my Nation Nigeria for one year. I was deployed to Illoye, Ogun State.",
                     },
                   ].map((item, i) => (
                     <motion.div
@@ -151,16 +151,10 @@ const About = () => {
                 <div className="timeline">
                   {[
                     {
-                      year: "02 - 04",
-                      level: "Nursery:",
-                      school: "S.N.A.P.S",
-                      desc: "Staff Nursery and Primary School.",
-                    },
-                    {
-                      year: "05 - 09",
-                      level: "Primary:",
-                      school: "S.N.A.P.S",
-                      desc: "Staff Nursery and Primary School.",
+                      year: "16 - 19",
+                      level: "Tertiary:",
+                      school: "A.B.S.U",
+                      desc: "Abia State University.",
                     },
                     {
                       year: "10 - 15",
@@ -169,10 +163,16 @@ const About = () => {
                       desc: "Demonstration Secondary School.",
                     },
                     {
-                      year: "16 - 19",
-                      level: "Tertiary:",
-                      school: "A.B.S.U",
-                      desc: "Abia State University.",
+                      year: "05 - 09",
+                      level: "Primary:",
+                      school: "S.N.A.P.S",
+                      desc: "Staff Nursery and Primary School.",
+                    },
+                    {
+                      year: "02 - 04",
+                      level: "Nursery:",
+                      school: "S.N.A.P.S",
+                      desc: "Staff Nursery and Primary School.",
                     },
                   ].map((item, i) => (
                     <motion.div
