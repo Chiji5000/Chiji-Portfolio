@@ -1,9 +1,58 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import "./about.css";
 import "./tooplate-style.css";
 import ToolsUsed from "../toolsused/ToolsUsed";
 
+import CSS from "../../Images/CSS.png";
+import HTML from "../../Images/HTML.png";
+import PHP from "../../Images/PHP.png";
+import Javascript_Intro from "../../Images/Introduction_Javascript.png";
+import Javascript_Inter from "../../Images/javascript_intermediate.png";
+import Jquery from "../../Images/JQuery.jpg";
+import ResponsiveDesign from "../../Images/Responsive_design.png";
+
+
+const certificates = [
+  {
+    id: 1,
+    src: HTML,
+    title: "HTML Mastery Certificate",
+  },
+  {
+    id: 2,
+    src: CSS,
+    title: "CSS Mastery Certificate",
+  },
+  {
+    id: 3,
+    src: Javascript_Intro,
+    title: "Introduction to JavaScript Certificate",
+  },
+  {
+    id: 4,
+    src: Javascript_Inter,
+    title: "JavaScript Intermediate Certificate",
+  },
+  {
+    id: 5,
+    src: Jquery,
+    title: "JQuery Mastery Certificate",
+  },
+  {
+    id: 6,
+    src: PHP,
+    title: "PHP Mastery Certificate",
+  },
+  {
+    id: 7,
+    src: ResponsiveDesign,
+    title: "Responsive Design Mastery Certificate",
+  },
+];
 const About = () => {
+  const [currentIndex, setCurrentIndex] = useState(null);
+
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 30 },
     visible: (i = 1) => ({
@@ -201,6 +250,74 @@ const About = () => {
             </div>
           </div>
         </div>
+        {/* Certificates Section */}
+        <div className="certificate-section">
+          <motion.h2
+            className="mb-4 cert-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUpVariant}
+          >
+            My Certificates
+          </motion.h2>
+
+          <div className="certificate-grid">
+            {certificates.map((cert, i) => (
+              <motion.div
+                key={cert.id}
+                className="certificate-card"
+                custom={i + 1}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUpVariant}
+                onClick={() => setCurrentIndex(i)}
+              >
+                <img src={cert.src} alt={cert.title} />
+                <p className="cert-caption">{cert.title}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {currentIndex !== null && (
+            <div className="modal">
+              <span className="close" onClick={() => setCurrentIndex(null)}>
+                &times;
+              </span>
+
+              <span
+                className="nav-arrow left"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentIndex(
+                    (currentIndex - 1 + certificates.length) %
+                      certificates.length
+                  );
+                }}
+              >
+                &#10094;
+              </span>
+
+              <img
+                className="modal-content"
+                src={certificates[currentIndex].src}
+                alt={certificates[currentIndex].title}
+              />
+
+              <span
+                className="nav-arrow right"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentIndex((currentIndex + 1) % certificates.length);
+                }}
+              >
+                &#10095;
+              </span>
+            </div>
+          )}
+        </div>
+
         <ToolsUsed className="view" />
         <hr />
       </section>
