@@ -12,7 +12,6 @@ import Javascript_Inter from "../../Images/javascript_intermediate.png";
 import Jquery from "../../Images/JQuery.jpg";
 import ResponsiveDesign from "../../Images/Responsive_design.png";
 
-
 const certificates = [
   {
     id: 1,
@@ -79,27 +78,13 @@ const About = () => {
             </motion.div>
 
             {[
-              `A Multifaceted Creative Force, I possess a unique blend of
-              technical expertise and artistic vision, excelling as a versatile
-              Web Developer, Graphic Designer, and UI/UX Designer. My passion
-              for crafting seamless digital experiences drives me to create
-              visually stunning and user-friendly interfaces that are both
-              functional and aesthetically pleasing.`,
+              ` As a Web Developer, I am proficient in core technologies including HTML, CSS, JavaScript, React, and Node.js, with experience building responsive, dynamic websites that deliver exceptional user experiences.`,
 
-              `As a Web Developer, I am proficient in key technologies, e.g.
-              [HTML, CSS, JavaScript, React, Node.js] and adept at building
-              responsive and dynamic websites that deliver exceptional user
-              experiences. My graphic design skills allow me to translate
-              concepts into visually compelling visuals, from logos and branding
-              to illustrations and marketing materials. As a UI/UX Designer, I
-              prioritize user needs and conduct thorough research to create
-              intuitive and engaging interfaces. I am skilled in user journey
-              mapping, wireframing, prototyping, and usability testing to ensure
-              that every interaction is seamless and enjoyable.`,
+              `My background in graphic design enables me to translate ideas into impactful visual solutions—ranging from branding, logos, and illustrations to marketing and promotional materials. As a UI/UX Designer, I focus on user-centered design principles, conducting research, user journey mapping, wireframing, prototyping, and usability testing to ensure intuitive and engaging digital products.`,
 
-              `I am a highly motivated and results-oriented professional with a
-              strong work ethic and a commitment to delivering high-quality work
-              that exceeds client expectations.`,
+              ` In addition to my creative and technical skill set, I have professional experience working with a scaffolding company, where I supported both technical and operational activities. Scaffolding companies specialize in providing safe temporary structures for construction, maintenance, and industrial projects, enabling workers to access elevated or hard-to-reach areas securely.`,
+
+              `I am a highly motivated, results-oriented professional with a strong work ethic and a commitment to delivering high-quality solutions that consistently exceed client and organizational expectations.`,
             ].map((text, i) => (
               <motion.p
                 className="attention-getter"
@@ -138,15 +123,15 @@ const About = () => {
                   {[
                     {
                       year: "2025",
-                      title: "Freelancer",
-                      place: "",
-                      desc: "Worked on personal projects and began job hunting.",
+                      title: "Creative & Technical Support Specialist",
+                      place: "Rated Cranes and Scaffold",
+                      desc: "I was responsible for creating visually engaging videos, flyers, and billboards, managing technical tasks, and supporting the team during on-site inspections.",
                     },
                     {
                       year: "2024",
                       title: "Web Developer",
                       place: "Started Diversifying",
-                      desc: "Taught Web, Office, and Graphics. Learned Cinematography/Videography. Self-taught React and Node Developer.",
+                      desc: "Taught Web, Office, and Graphics at CCT. Learned Cinematography/Videography at WLBC. Self-taught React and Node Developer.",
                     },
                     {
                       year: "2023",

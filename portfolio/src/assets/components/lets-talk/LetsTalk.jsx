@@ -153,7 +153,6 @@ const LetsTalk = () => {
       >
         <span>Let's</span> Talk
       </motion.h2>
-
       <motion.div
         className="container pb-5 mt-3"
         variants={containerStagger}
@@ -242,7 +241,6 @@ const LetsTalk = () => {
           </div>
         </motion.div>
       </motion.div>
-
       {/* Footer Section */}
       <motion.footer
         id="footer"
@@ -404,7 +402,14 @@ const LetsTalk = () => {
             </p>
           </div>
         </motion.div>
-      </motion.footer>
+      </motion.footer>{" "}
+      <div className="footer_bubbles">
+        <div className="bubble bubble-1"></div>
+        <div className="bubble bubble-2"></div>
+        <div className="bubble bubble-3"></div>
+        <div className="bubble bubble-4"></div>
+        <div className="bubble bubble-5"></div>
+      </div>{" "}
     </section>
   );
 };

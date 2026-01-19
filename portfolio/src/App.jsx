@@ -6,9 +6,7 @@ import Project from "./assets/components/projects/Project.jsx";
 import LetsTalk from "./assets/components/lets-talk/LetsTalk.jsx";
 import Preloader from "./assets/components/preloader/Preloader.jsx";
 import WhatsappMobile from "./assets/components/whatsapp/WhatsappMobile.jsx";
-import RadarSkills from "./assets/components/radar/RadarSkills.jsx";
 import Testimonial from "./assets/components/testimonial/Testimonial.jsx";
-import SolarSystemScroll from "./assets/components/SolarSystemScroll.jsx";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -28,11 +26,9 @@ function App() {
         <Preloader />
       ) : (
         <>
-          <SolarSystemScroll />
           <Nav />
           <Intro className="view" />
           <About className="view" />
-          <RadarSkills className="view" />
           <Project className="view" />
           <WhatsappMobile />
           <Testimonial className="view" />

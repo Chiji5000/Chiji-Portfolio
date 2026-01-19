@@ -25,12 +25,14 @@
         0 8px 8px rgba(0, 0, 0, 0.03),
         0 16px 16px rgba(0, 0, 0, 0.03);
     z-index: 100;
-    background-color: transparent;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
     height: var(--header-height);
-    width: 100%;
+    width: 80%;
     position: absolute;
     top: min(var(--vspace-0_75), 4vh);
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     transition: all 0.4s ease-in-out;
 }
 
@@ -45,7 +47,8 @@
     width: 100vw;
     left: 0;
     top: 0;
-    background-color: var(--color-3); /* or set your desired background */
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
     z-index: 999;
     box-shadow: var(--box-shadow);
     transform: translateY(0);
@@ -57,7 +60,8 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: var(--color-3);
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
     box-shadow: var(--box-shadow);
     opacity: 0;
     visibility: hidden;
@@ -82,7 +86,8 @@
     height: var(--header-height);
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-3);
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
     border: 1px solid rgba(255, 255, 255, 0.03);
     padding: 0 var(--gutter);
     box-shadow: var(--box-shadow);
@@ -145,10 +150,36 @@
     color: var(--color-gray-14);
     padding: 0 1.2rem;
     transition-property: color, background-color;
+    position: relative;
+}
+
+.s-header__menu-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.s-header__menu-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.s-header__menu-links a:hover {
+    color: white;
 }
 
 .s-header__menu-links .current a {
     color: white;
+}
+
+.s-header__menu-links .current a::after {
+    transform: scaleX(1);
 }
 
 /* --------------------------------------------------------------------
@@ -348,8 +379,15 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
     .s-header__menu-toggle {
         right: calc(var(--gutter) * 2);
+    }
+
+    /* Make navbar full width on mobile */
+    .s-header {
+        width: 100%;
+        left: 0;
+        transform: none;
     }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../../assets/Images/logo.png";
 import "./nav.css";
 
@@ -37,16 +37,22 @@ const Nav = () => {
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
       (entries) => {
+        let maxRatio = 0;
+        let activeId = null;
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            activeId = entry.target.id;
           }
         });
+        if (activeId) {
+          setActiveSection(activeId);
+        }
       },
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.6, // Adjust based on when you want the change to trigger
+        threshold: 0.1, // Lower threshold to detect more sections
       }
     );
 

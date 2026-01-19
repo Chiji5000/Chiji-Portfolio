@@ -1,7 +1,7 @@
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import "./intro.css";
-import profilepic from "../../Images/chiji-main.png";
+import profilepic from "../../Images/new_bg.png";
 import {
   FaWhatsapp,
   FaLinkedinIn,
@@ -25,6 +25,16 @@ const fadeIn = {
   }),
 };
 
+const slideInLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
+
 function Intro() {
   const [text] = useTypewriter({
     words: ["Web Developer", "Graphic Designer", "UI/UX Designer"],
@@ -32,8 +42,22 @@ function Intro() {
     onLoopDone: () => console.log("done from typewriter hook"),
   });
 
+  // 3D tilt effect for profile image - REMOVED
+  // const x = useMotionValue(0);
+  // const y = useMotionValue(0);
+  // const rotateX = useTransform(y, [-100, 100], [15, -15]);
+  // const rotateY = useTransform(x, [-100, 100], [-15, 15]);
+
   return (
     <section id="intro" className="s-intro target-section">
+      <div className="animated-bg"></div>
+      <div className="floating-shapes">
+        <div className="shape shape-1"></div>
+        <div className="shape shape-2"></div>
+        <div className="shape shape-3"></div>
+        <div className="shape shape-4"></div>
+      </div>
+      <Snowfall />
       <div className="row s-intro__content width-sixteen-col">
         <motion.div
           className="column lg-12 s-intro__content-inner grid-block grid-16"
@@ -41,24 +65,25 @@ function Intro() {
           animate="visible"
           variants={fadeUp}
         >
-          <Snowfall />
           <motion.div className="s-intro__content-text" variants={fadeIn}>
             <motion.div
               className="s-intro__content-pretitle text-pretitle"
               variants={fadeIn}
               custom={0.3}
             >
-              Hello
+              Hello, I'm
             </motion.div>
             <motion.h1
               className="s-intro__content-title"
               variants={fadeIn}
               custom={0.5}
             >
-              I'm Iruke Chijindu <br />
-              I Am a<br />
+              <span className="gradient-text">Iruke Chijindu</span>
+              <br />
+              <span className="profession-text">I Am a</span>
+              <br />
               <span className="typewriter-fade">{text}</span>
-              <span style={{ color: "red" }}>
+              <span style={{ color: "#4a90e2" }}>
                 <Cursor />
               </span>
             </motion.h1>
@@ -67,31 +92,34 @@ function Intro() {
               variants={fadeIn}
               custom={0.8}
             >
-              <a
-                className="smoothscroll btn more_abot_me"
+              <motion.a
+                className="smoothscroll btn more_about_me"
                 href="#about"
-                style={{
-                  backgroundColor: "black",
-                  height: "100px",
-                  width: "100px",
-                  padding: "20px",
+                whileHover={{
+                  scale: 1.05,
+                  rotateX: 5,
+                  rotateY: 5,
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
                 }}
+                whileTap={{ scale: 0.95 }}
+                style={{ transformStyle: "preserve-3d" }}
               >
                 More About Me
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 className="smoothscroll btn btn--stroke get_in_touch"
                 href="#footer"
-                style={{
-                  height: "100px",
-                  width: "100px",
-                  padding: "20px",
-                  border: "2px solid black",
-                  color: "black",
+                whileHover={{
+                  scale: 1.05,
+                  rotateX: -5,
+                  rotateY: -5,
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
                 }}
+                whileTap={{ scale: 0.95 }}
+                style={{ transformStyle: "preserve-3d" }}
               >
                 Get In Touch
-              </a>
+              </motion.a>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -100,10 +128,22 @@ function Intro() {
           className="s-intro__social social-list"
           initial="hidden"
           animate="visible"
+          variants={slideInRight}
         >
           {[FaWhatsapp, FaLinkedinIn, FaPhoneFlip, FaSquareGithub].map(
             (Icon, index) => (
-              <motion.li key={index} variants={fadeIn} custom={1 + index * 0.2}>
+              <motion.li
+                key={index}
+                variants={fadeIn}
+                custom={1 + index * 0.2}
+                whileHover={{
+                  scale: 1.2,
+                  rotateY: 15,
+                  z: 50,
+                }}
+                whileTap={{ scale: 0.9 }}
+                style={{ transformStyle: "preserve-3d" }}
+              >
                 <a
                   href={
                     index === 0
@@ -148,6 +188,7 @@ function Intro() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
       >
+        <div className="profile-glow"></div>
         <img src={profilepic} alt="Profile" />
       </motion.div>
 
@@ -157,19 +198,19 @@ function Intro() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
       >
-        <a
+        <motion.a
           className="btn btn--stroke get_my_cv"
           href={cv}
-          style={{
-            width: "100px",
-            height: "100px",
-            backgroundColor: "black",
-            padding: "20px",
-            border: "2px solid white",
+          whileHover={{
+            scale: 1.05,
+            rotateX: 10,
+            boxShadow: "0 25px 50px rgba(0, 0, 0, 0.4)",
           }}
+          whileTap={{ scale: 0.95 }}
+          style={{ transformStyle: "preserve-3d" }}
         >
           GET MY CV
-        </a>
+        </motion.a>
       </motion.div>
     </section>
   );

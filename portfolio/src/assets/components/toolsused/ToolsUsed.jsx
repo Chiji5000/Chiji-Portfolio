@@ -20,6 +20,8 @@ import css from "../../logos/css.png";
 import js from "../../logos/js.png";
 import bootstrap from "../../logos/bootstrap.png";
 import mysql from "../../logos/mysql.png";
+import capcut from "../../logos/capcut.png";
+import canva from "../../logos/canva.png";
 
 // Array of logos and alt text
 const tools = [
@@ -39,6 +41,8 @@ const tools = [
   { src: excel, alt: "Microsoft Excel" },
   { src: powerpoint, alt: "Microsoft PowerPoint" },
   { src: access, alt: "Microsoft Access" },
+  {src: capcut, alt: "CapCut" },
+  {src: canva, alt: "Canva" },
 ];
 
 const ToolsUsed = () => {
