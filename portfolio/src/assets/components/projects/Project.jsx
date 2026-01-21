@@ -4,9 +4,24 @@ import "./project.css";
 
 const projects = [
   {
+    title: "Chiji's Photo Album",
+    description: "Come and see Chiji's Graphical Work.",
+    url: "https://chijiphotoalbum.netlify.app/",
+  },
+  {
     title: "My Blog",
     description: "Read what is going on daily and don't be afraid to comment.",
     url: "http://myblog.ct.ws/",
+  },
+  {
+    title: "Chiji's Planetary System",
+    description: "Come and explore the solar system.",
+    url: "https://chijiplanetarysystem.netlify.app/",
+  },
+  {
+    title: "Chiji's Malware Detection System",
+    description: "Scan your files for any malware whats so ever.",
+    url: "https://chijimalwaredetection.netlify.app//",
   },
   {
     title: "Mama Maloura",
