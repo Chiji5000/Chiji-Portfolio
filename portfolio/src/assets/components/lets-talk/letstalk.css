@@ -387,3 +387,22 @@ hr {
     width: 100% !important;
   }
 }
+
+/* Tablet */
+@media screen and (max-width: 1204px) {
+  .message_me,
+  .my_cv {
+    padding: 18px 100px; /* reduce horizontal padding */
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .message_me,
+  .my_cv {
+    padding: 16px 40px;  /* prevent overflow */
+    width: 90% !important;
+    max-width: 320px;
+    margin-inline: auto;
+    display: block;
+  }
+}

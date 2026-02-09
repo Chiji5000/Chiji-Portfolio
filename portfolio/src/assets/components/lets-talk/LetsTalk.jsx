@@ -387,7 +387,7 @@ const LetsTalk = () => {
           </div>
           <div className="column xl-6 lg-12">
             <p className="ss-copyright">
-              <span>© Copyright Chijindu 2025</span>
+              <span>© Copyright Chijindu 2026</span>
               <br />
               <span>
                 Design by{" "}

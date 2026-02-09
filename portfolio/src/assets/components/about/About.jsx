@@ -76,161 +76,94 @@ const About = () => {
             >
               <h2 className="text-display-title">About Me.</h2>
             </motion.div>
-
-            {[
-              ` As a Web Developer, I am proficient in core technologies including HTML, CSS, JavaScript, React, and Node.js, with experience building responsive, dynamic websites that deliver exceptional user experiences.`,
-
-              `My background in graphic design enables me to translate ideas into impactful visual solutions—ranging from branding, logos, and illustrations to marketing and promotional materials. As a UI/UX Designer, I focus on user-centered design principles, conducting research, user journey mapping, wireframing, prototyping, and usability testing to ensure intuitive and engaging digital products.`,
-
-              ` In addition to my creative and technical skill set, I have professional experience working with a scaffolding company, where I supported both technical and operational activities. Scaffolding companies specialize in providing safe temporary structures for construction, maintenance, and industrial projects, enabling workers to access elevated or hard-to-reach areas securely.`,
-
-              `I am a highly motivated, results-oriented professional with a strong work ethic and a commitment to delivering high-quality solutions that consistently exceed client and organizational expectations.`,
-            ].map((text, i) => (
-              <motion.p
-                className="attention-getter"
-                key={i}
-                custom={i + 1}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUpVariant}
-              >
-                {text}
-              </motion.p>
-            ))}
-          </div>
-        </div>
-
-        <div
-          className="resume py-5 d-lg-flex justify-content-center align-items-center mt-4"
-          id="resume"
-        >
-          <div className="container d-flex justify-content-center">
-            <div className="row">
-              {/* Experience Section */}
-              <div className="col-lg-6 col-12">
-                <motion.h2
-                  className="mb-4 experience"
-                  initial="hidden"
-                  whileInView="visible"
+            {/* What I Do Section */}
+            <div className="what-i-do">
+              <div className="what-i-do-container">
+                {/* FRONTEND */}
+                <motion.div
+                  className="what-card gradient-border"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  variants={fadeUpVariant}
                 >
-                  Experiences
-                </motion.h2>
+                  <div className="what-icon frontend-icon">
+                    {/* Inline SVG */}
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M4 5h16v10H4zM9 19h6"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
 
-                <div className="timeline">
-                  {[
-                    {
-                      year: "2025",
-                      title: "Creative & Technical Support Specialist",
-                      place: "Rated Cranes and Scaffold",
-                      desc: "I was responsible for creating visually engaging videos, flyers, and billboards, managing technical tasks, and supporting the team during on-site inspections.",
-                    },
-                    {
-                      year: "2024",
-                      title: "Web Developer",
-                      place: "Started Diversifying",
-                      desc: "Taught Web, Office, and Graphics at CCT. Learned Cinematography/Videography at WLBC. Self-taught React and Node Developer.",
-                    },
-                    {
-                      year: "2023",
-                      title: "Web Designer",
-                      place: "Was Employed",
-                      desc: "Worked for CCT as a Microsoft Office instructor and started learning Web and Graphics. Later became a self-taught UI/UX designer.",
-                    },
-                    {
-                      year: "2022",
-                      title: "N.Y.S.C",
-                      place: "Ogun State",
-                      desc: "I was deployed to serve my Nation Nigeria for one year. I was deployed to Illoye, Ogun State.",
-                    },
-                  ].map((item, i) => (
-                    <motion.div
-                      className="timeline-wrapper"
-                      key={i}
-                      custom={i + 1}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={fadeUpVariant}
-                    >
-                      <div className="timeline-yr">
-                        <span>{item.year}</span>
-                      </div>
-                      <div className="timeline-info">
-                        <h3>
-                          <span>{item.title}</span>
-                          {item.place && <small>{item.place}</small>}
-                        </h3>
-                        <p>{item.desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+                  <h3>Frontend</h3>
+                  <p>
+                    I create responsive and reusable frontend components using
+                    React, with a focus on clean design, performance, and
+                    accessibility. I’m skilled in HTML, CSS, JavaScript,
+                    Bootstrap, Tailwind CSS, jQuery, and Figma
+                  </p>
+                </motion.div>
 
-              {/* Education Section */}
-              <div className="col-lg-6 col-12">
-                <motion.h2
-                  className="mb-4 mobile-mt-2 education"
-                  initial="hidden"
-                  whileInView="visible"
+                <div className="what-line"></div>
+
+                {/* BACKEND */}
+                <motion.div
+                  className="what-card gradient-border"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
                   viewport={{ once: true }}
-                  variants={fadeUpVariant}
                 >
-                  Educations
-                </motion.h2>
+                  <div className="what-icon backend-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M3 7h18M3 12h18M3 17h18"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
 
-                <div className="timeline">
-                  {[
-                    {
-                      year: "16 - 19",
-                      level: "Tertiary:",
-                      school: "A.B.S.U",
-                      desc: "Abia State University.",
-                    },
-                    {
-                      year: "10 - 15",
-                      level: "Secondary:",
-                      school: "D.S.S",
-                      desc: "Demonstration Secondary School.",
-                    },
-                    {
-                      year: "05 - 09",
-                      level: "Primary:",
-                      school: "S.N.A.P.S",
-                      desc: "Staff Nursery and Primary School.",
-                    },
-                    {
-                      year: "02 - 04",
-                      level: "Nursery:",
-                      school: "S.N.A.P.S",
-                      desc: "Staff Nursery and Primary School.",
-                    },
-                  ].map((item, i) => (
-                    <motion.div
-                      className="timeline-wrapper"
-                      key={i}
-                      custom={i + 1}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={fadeUpVariant}
-                    >
-                      <div className="timeline-yr">
-                        <span>{item.year}</span>
-                      </div>
-                      <div className="timeline-info">
-                        <h3>
-                          <span>{item.level}</span>
-                          <small>{item.school}</small>
-                        </h3>
-                        <p>{item.desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+                  <h3>Backend</h3>
+                  <p>
+                    I design and build secure, scalable REST APIs using PHP,
+                    Node.js, MySQL, and MongoDB to power robust applications.
+                  </p>
+                </motion.div>
+
+                <div className="what-line"></div>
+
+                {/* DEVOPS */}
+                <motion.div
+                  className="what-card gradient-border"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="what-icon devops-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M12 3v18M3 12h18"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
+
+                  <h3>DevOps</h3>
+                  <p>
+                    I manage deployments, cloud infrastructure, and application
+                    stability with a focus on security and performance.
+                  </p>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -277,7 +210,7 @@ const About = () => {
                   e.stopPropagation();
                   setCurrentIndex(
                     (currentIndex - 1 + certificates.length) %
-                      certificates.length
+                      certificates.length,
                   );
                 }}
               >

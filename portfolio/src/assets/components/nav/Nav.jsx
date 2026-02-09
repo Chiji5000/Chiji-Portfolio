@@ -53,7 +53,7 @@ const Nav = () => {
         root: null,
         rootMargin: "0px",
         threshold: 0.1, // Lower threshold to detect more sections
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -102,7 +102,7 @@ const Nav = () => {
             </li>
             <li className={activeSection === "projects" ? "current" : ""}>
               <a className="smoothscroll" href="#projects">
-                Works
+                Projects
               </a>
             </li>
             <li className={activeSection === "talk" ? "current" : ""}>
