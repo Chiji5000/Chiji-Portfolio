@@ -1,5 +1,4 @@
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { motion, useMotionValue, useTransform } from "framer-motion";
 import "./intro.css";
 import profilepic from "../../Images/new_bg.png";
 import {
@@ -9,31 +8,6 @@ import {
   FaSquareGithub,
 } from "react-icons/fa6";
 import { IoMdArrowDropdown } from "react-icons/io";
-import Snowfall from "../snowfall/Snowfall";
-import cv from "../../Chijindu_Iruke_Resume.pdf";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-};
-
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    transition: { duration: 0.8, delay },
-  }),
-};
-
-const slideInLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-};
-
-const slideInRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-};
 
 function Intro() {
   const [text] = useTypewriter({
@@ -42,176 +16,97 @@ function Intro() {
     onLoopDone: () => console.log("done from typewriter hook"),
   });
 
-  // 3D tilt effect for profile image - REMOVED
-  // const x = useMotionValue(0);
-  // const y = useMotionValue(0);
-  // const rotateX = useTransform(y, [-100, 100], [15, -15]);
-  // const rotateY = useTransform(x, [-100, 100], [-15, 15]);
-
   return (
     <section id="intro" className="s-intro target-section">
-      <div className="animated-bg"></div>
-      <div className="floating-shapes">
-        <div className="shape shape-1"></div>
-        <div className="shape shape-2"></div>
-        <div className="shape shape-3"></div>
-        <div className="shape shape-4"></div>
-      </div>
-      <Snowfall />
-      <div className="row s-intro__content width-sixteen-col">
-        <motion.div
-          className="column lg-12 s-intro__content-inner grid-block grid-16"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-        >
-          <motion.div className="s-intro__content-text" variants={fadeIn}>
-            <motion.div
-              className="s-intro__content-pretitle text-pretitle"
-              variants={fadeIn}
-              custom={0.3}
-            >
-              Hello, I'm
-            </motion.div>
-            <motion.h1
-              className="s-intro__content-title"
-              variants={fadeIn}
-              custom={0.5}
-            >
-              <span className="gradient-text">Iruke Chijindu</span>
-              <br />
-              <span className="profession-text">I Am a</span>
-              <br />
-              <span className="typewriter-fade">{text}</span>
-              <span style={{ color: "#4a90e2" }}>
-                <Cursor />
+      <div className="intro-container">
+        {/* Left Content */}
+        <div className="intro-left">
+          <div className="intro-content">
+            <p className="intro-subtitle">WELCOME TO MY WORLD</p>
+            <h1 className="intro-title">
+              Hi, I'm <span className="intro-name">Iruke Chijindu</span>
+            </h1>
+            <div className="intro-profession">
+              <span className="intro-text">I'm a</span>
+              <span className="intro-job">
+                {text}
+                <span style={{ color: "#e91e63" }}>
+                  <Cursor />
+                </span>
               </span>
-            </motion.h1>
-            <motion.div
-              className="s-intro__content-btns"
-              variants={fadeIn}
-              custom={0.8}
-            >
-              <motion.a
-                className="smoothscroll btn more_about_me"
-                href="#about"
-                whileHover={{
-                  scale: 1.05,
-                  rotateX: 5,
-                  rotateY: 5,
-                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                More About Me
-              </motion.a>
-              <motion.a
-                className="smoothscroll btn btn--stroke get_in_touch"
-                href="#footer"
-                whileHover={{
-                  scale: 1.05,
-                  rotateX: -5,
-                  rotateY: -5,
-                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                Get In Touch
-              </motion.a>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-
-        <motion.ul
-          className="s-intro__social social-list"
-          initial="hidden"
-          animate="visible"
-          variants={slideInRight}
-        >
-          {[FaWhatsapp, FaLinkedinIn, FaPhoneFlip, FaSquareGithub].map(
-            (Icon, index) => (
-              <motion.li
-                key={index}
-                variants={fadeIn}
-                custom={1 + index * 0.2}
-                whileHover={{
-                  scale: 1.2,
-                  rotateY: 15,
-                  z: 50,
-                }}
-                whileTap={{ scale: 0.9 }}
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                <a
-                  href={
-                    index === 0
-                      ? "https://wa.me/2347031234567"
-                      : index === 1
-                      ? "https://www.linkedin.com/in/iruke-chijindu-415431332/"
-                      : index === 2
-                      ? "tel:+2347067583021"
-                      : "https://github.com/Chiji5000"
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon className="social-list__icon" />
-                  <span className="u-screen-reader-text">Social</span>
-                </a>
-              </motion.li>
-            )
-          )}
-        </motion.ul>
-
-        <motion.div
-          className="s-intro__scroll-down"
-          initial={{ y: 0 }}
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <a href="#about" className="smoothscroll">
-            <div className="scroll-icon">
-              <IoMdArrowDropdown />
             </div>
-            <span className="scroll-text u-screen-reader-text">
-              Scroll Down
-            </span>
+
+            <p className="intro-description">
+              I use animation as a third dimension by which to simplify
+              experiences and guide through each and every interaction. I'm not
+              adding motion just to spruce things up, but doing it in ways that.
+            </p>
+
+            {/* Find With Me Section */}
+            <div className="social-section">
+              <h3 className="social-title">FIND WITH ME</h3>
+              <ul className="social-list">
+                <li>
+                  <a
+                    href="https://wa.me/2347031234567"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaWhatsapp className="social-icon" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/iruke-chijindu-415431332/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedinIn className="social-icon" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:+2347067583021"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaPhoneFlip className="social-icon" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Chiji5000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaSquareGithub className="social-icon" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Best Skill On Section */}
+            <div className="skills-section">
+              
+            </div>
+          </div>
+        </div>
+
+        {/* Right Content - Profile Image */}
+        <div className="intro-right">
+          <div className="profile-wrapper">
+            <img src={profilepic} alt="Profile" className="profile-img" />
+            <div className="demos-text">CHIJI</div>
+          </div>
+        </div>
+
+        {/* Scroll Down Arrow */}
+        <div className="scroll-down-btn">
+          <a href="#about" className="smoothscroll">
+            <IoMdArrowDropdown size={24} />
           </a>
-        </motion.div>
+        </div>
       </div>
-
-      <motion.div
-        className="s-intro__content-media"
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="profile-glow"></div>
-        <img src={profilepic} alt="Profile" />
-      </motion.div>
-
-      <motion.div
-        className="s-intro__btn-download"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-      >
-        <motion.a
-          className="btn btn--stroke get_my_cv"
-          href={cv}
-          whileHover={{
-            scale: 1.05,
-            rotateX: 10,
-            boxShadow: "0 25px 50px rgba(0, 0, 0, 0.4)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          style={{ transformStyle: "preserve-3d" }}
-        >
-          GET MY CV
-        </motion.a>
-      </motion.div>
     </section>
   );
 }

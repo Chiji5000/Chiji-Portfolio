@@ -353,20 +353,20 @@ const LetsTalk = () => {
             <ul className="s-footer__social social-list">
               <li>
                 <a
-                  href="https://linkedin.com/in/iruke-chijindu-415431332/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedinIn className="social-list__icon" />
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://wa.me/+2347067583021"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaWhatsapp className="social-list__icon" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/iruke-chijindu-415431332/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn className="social-list__icon" />
                 </a>
               </li>
               <li>
